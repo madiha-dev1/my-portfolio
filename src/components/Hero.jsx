@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ArrowRight, Mail, SoundOff, SoundOn } from './Icons'
 import { faArrowRightArrowLeft, faCircle, faCircleArrowRight, faDownload } from '@fortawesome/free-solid-svg-icons'
 
-const RESUME_URL = `${import.meta.env.BASE_URL}Madiha-Noor-Resume.pdf`
+const RESUME_URL = `${import.meta.env.BASE_URL}madiha noor resume.pdf`
 
 export default function Hero() {
   const videoRef = useRef(null)
