@@ -97,6 +97,7 @@ export const projects = [
   },
 ]
 
+
 export const navItems = [
   { to: '/', label: 'Home', end: true, icon: 'Home' },
   { to: '/about', label: 'About', icon: 'User' },
@@ -105,3 +106,5 @@ export const navItems = [
   { to: '/skills', label: 'Skills', icon: 'Code' },
   { to: '/contact', label: 'Contact', icon: 'MailSolid' },
 ]
+
+

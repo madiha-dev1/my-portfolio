@@ -7,6 +7,33 @@ import { useState, useEffect, useCallback } from "react";
 
 const projects = [
   {
+    tag: "Frontend",
+    title: "Library Management System",
+    desc: "An admin dashboard to add books and users, assign and return books, and keep track of recent activity with a clean, responsive layout.",
+    tech: ["React.js", "Bootstrap", "React Router"],
+    image: "/media/library-desktop.jpg",
+    mobileImage: "/media/library-mobile.jpg",
+    demo: "https://madiha-dev1.github.io/library-management-project/",
+  },
+  {
+    tag: "Frontend",
+    title: "Expense Tracker",
+    desc: "Track daily expenses by title, amount, category and date, delete selected entries and see the running total at a glance.",
+    tech: ["React.js", "JavaScript", "Bootstrap"],
+    image: "/media/expense-desktop.jpg",
+    mobileImage: "/media/expense-mobile.jpg",
+    demo: "https://madiha-dev1.github.io/expense-tracker-app/",
+  },
+  {
+    tag: "In Progress",
+    title: "E-Commerce Website",
+    desc: "A modern online store with product listings, a shopping cart and a smooth checkout flow. This project is currently under development \u2014 the live demo will be added soon.",
+    tech: ["React.js"],
+    image: "/media/ecommerce-desktop.jpg",
+    mobileImage: "/media/ecommerce-mobile.jpg",
+    demo: "#",
+  },
+  {
     tag: "Full Stack",
     title: "Restaurant Web App",
     desc: "Deploying this project came with its own challenges, but I made sure everything was done right — proper sign-in/sign-up authentication, and a UI that's modern, clean, and includes smooth animations throughout.",
