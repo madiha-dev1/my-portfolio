@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0e16">
+<meta name="description" content="Contact Madiha — Full Stack Developer. Open to full-time roles and freelance projects. hello@madiha.dev">
+<title>Contact — Madiha · Full Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="Madiha%20-%20Full%20Stack%20Developer.html">madiha<span>.</span>dev</a>
+  <button class="navtoggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+  </button>
+  <div class="navlinks" id="navLinks">
+    <a href="Madiha%20-%20Full%20Stack%20Developer.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="work.html">Work</a>
+    <a href="contact.html" class="is-active" aria-current="page">Contact</a>
+  </div>
+</nav>
+
+<main id="top">
+
+<section class="page-hero">
+  <div class="page-hero-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="kicker rv">Get in touch</p>
+    <h1 class="rv">Let&#8217;s build something fast and scalable together.</h1>
+    <p class="lede rv">Open to full-time roles and freelance projects. I usually reply within a day.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="info-grid">
+      <a class="info rv" href="mailto:hello@madiha.dev">
+        <span class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"></rect><path d="M3.5 7.5l7.6 5.2a1.6 1.6 0 0 0 1.8 0l7.6-5.2"></path></svg></span>
+        <span><span class="info-k">Email</span><span class="info-v">hello@madiha.dev</span></span>
+      </a>
+      <a class="info rv" href="#">
+        <span class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="6" r="2.5"></circle><circle cx="6.5" cy="18" r="2.5"></circle><circle cx="17.5" cy="9" r="2.5"></circle><path d="M6.5 8.5v7"></path><path d="M17.5 11.5c0 2.9-3.4 3.3-6.6 3.8"></path></svg></span>
+        <span><span class="info-k">GitHub</span><span class="info-v">github.com/madiha</span></span>
+      </a>
+      <a class="info rv" href="#">
+        <span class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13.5a3.5 3.5 0 0 0 5 0l3-3a3.5 3.5 0 0 0-5-5l-1 1"></path><path d="M14 10.5a3.5 3.5 0 0 0-5 0l-3 3a3.5 3.5 0 0 0 5 5l1-1"></path></svg></span>
+        <span><span class="info-k">LinkedIn</span><span class="info-v">linkedin.com/in/madiha</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="grid grid-2">
+      <div class="rv">
+        <p class="kicker">Send a message</p>
+        <h2 class="sec-title">Tell me about the project.</h2>
+        <form class="form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="cf-name">Your name</label>
+            <input id="cf-name" name="name" type="text" placeholder="Jane Doe" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="cf-email">Your email</label>
+            <input id="cf-email" name="email" type="email" placeholder="jane@company.com" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="cf-subject">Subject</label>
+            <input id="cf-subject" name="subject" type="text" placeholder="New project — web app">
+          </div>
+          <div class="field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" placeholder="What are you building?" required></textarea>
+          </div>
+          <div class="btnrow">
+            <button class="btn btn-primary" type="submit"><span>Send Message</span>
+              <svg class="btn-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </div>
+          <p class="form-note" id="formNote">This form has no server behind it &mdash; it opens your own email app with the message already written, addressed to <a href="mailto:hello@madiha.dev">hello@madiha.dev</a>. Prefer that anyway? Just email me directly.</p>
+        </form>
+      </div>
+
+      <div class="rv">
+        <p class="kicker">Rather skip the form?</p>
+        <h2 class="sec-title">Reach me directly.</h2>
+        <p class="lede">If you just want to talk through an idea first, that&#8217;s fine &mdash; send me a line and I&#8217;ll walk you through how I&#8217;d approach it.</p>
+        <div class="btnrow">
+          <a class="btn btn-ghost" href="mailto:hello@madiha.dev">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"></rect><path d="M3.5 7.5l7.6 5.2a1.6 1.6 0 0 0 1.8 0l7.6-5.2"></path></svg>
+            <span>hello@madiha.dev</span>
+          </a>
+          <a class="btn btn-ghost" href="#">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><polyline points="7 10 12 15 17 10"></polyline><path d="M4 20h16"></path></svg>
+            <span>Download Resume</span>
+          </a>
+        </div>
+        <div class="btnrow">
+          <a class="proj-link quiet" href="Madiha%20-%20Full%20Stack%20Developer.html#contact">Contact section on the home page
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2 class="rv">Not sure where to start?</h2>
+    <p class="rv">Have a look at the work and the stack first &mdash; then tell me what you need.</p>
+    <div class="btnrow">
+      <a class="btn btn-primary" href="work.html"><span>See My Work</span><svg class="btn-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+      <a class="btn btn-ghost" href="skills.html"><span>See the Stack</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Madiha. Built with React, Node.js, and a lot of coffee.</span>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var els = Array.prototype.slice.call(document.querySelectorAll('.rv'));
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+        });
+      }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+      els.forEach(function(el){ io.observe(el); });
+      window.setTimeout(function(){ els.forEach(function(el){ el.classList.add('in'); }); }, 3000);
+    } else {
+      els.forEach(function(el){ el.classList.add('in'); });
+    }
+    var btn = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+    if(btn && links){
+      btn.addEventListener('click', function(){
+        var open = links.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      links.addEventListener('click', function(e){
+        if(e.target.closest('a')){
+          links.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // no backend: compose the message into the visitor's own mail client
+    var form = document.getElementById('contactForm');
+    var note = document.getElementById('formNote');
+    if(form){
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var name = (document.getElementById('cf-name').value || '').trim();
+        var email = (document.getElementById('cf-email').value || '').trim();
+        var subject = (document.getElementById('cf-subject').value || '').trim();
+        var message = (document.getElementById('cf-message').value || '').trim();
+        if(!name || !email || !message){
+          note.textContent = 'Please fill in your name, your email and a message.';
+          note.style.color = '#ff8f8f';
+          return;
+        }
+        note.textContent = 'Opening your email app with the message ready to send.';
+        note.style.color = '';
+        var body = 'Name: ' + name + '\nEmail: ' + email + '\n\n' + message;
+        window.location.href = 'mailto:hello@madiha.dev'
+          + '?subject=' + encodeURIComponent(subject || 'Website enquiry')
+          + '&body=' + encodeURIComponent(body);
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>
