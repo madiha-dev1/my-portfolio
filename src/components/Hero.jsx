@@ -1,85 +1,67 @@
-import { useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { heroMedia, profile } from '../data/portfolio'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-import { ArrowRight, Mail, SoundOff, SoundOn } from './Icons'
-import { faArrowRightArrowLeft, faCircle, faCircleArrowRight, faDownload } from '@fortawesome/free-solid-svg-icons'
-
-const RESUME_URL = `${import.meta.env.BASE_URL}madiha noor resume.pdf`
+import { useEffect, useRef, useState } from 'react'
+import { profile } from '../data.js'
+import { socials } from '../socials.js'
+import { prefersReducedMotion } from '../hooks.js'
 
 export default function Hero() {
-  const videoRef = useRef(null)
+  const vid = useRef(null)
+  const [paused, setPaused] = useState(false)
   const [muted, setMuted] = useState(true)
 
+  useEffect(() => {
+    if (prefersReducedMotion()) vid.current?.pause()
+  }, [])
+
+  const togglePlay = () => {
+    const v = vid.current
+    v.paused ? v.play() : v.pause()
+  }
   const toggleSound = () => {
-    const video = videoRef.current
-    if (!video) return
-    video.muted = !video.muted
-    setMuted(video.muted)
-    if (!video.muted) video.play().catch(() => {})
+    const v = vid.current
+    const m = !v.muted
+    v.muted = m
+    v.volume = 1
+    setMuted(m)
+    if (!m && v.paused) v.play()
   }
 
   return (
-    <section className="hero" id="home">
-      {/* object-fit: contain keeps the whole 16:9 frame visible, never cropped */}
+    <section id="home" className="red">
+      <div className="hero-copy">
+        <h1>Hi, I'm {profile.short},<span>{profile.role}</span></h1>
+        <p>{profile.heroText}</p>
+        <div className="btns">
+          <a className="btn w" href="#projects">View my work</a>
+          <a className="btn" href="#contact">Contact me</a>
+          <a className="btn" href={profile.resume} download="Madiha-Memon-Resume.pdf">Download resume</a>
+        </div>
+        <div className="social">
+          {socials.map((s) => (
+            <a key={s.name} className="soc" href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.name} title={s.name}>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={s.path} /></svg>
+            </a>
+          ))}
+        </div>
+      </div>
       <video
-        ref={videoRef}
-        className="hero-video"
+        ref={vid}
+        className="bg"
+        src="/assets/hero.mp4"
+        poster="/assets/poster.jpg"
         autoPlay
-        muted
+        muted={muted}
         loop
         playsInline
-        preload="metadata"
-        aria-label={`${profile.name} — ${profile.role}`}
-      >
-        <source src={heroMedia.video} type="video/mp4" />
-      </video>
-
-      <div className="hero-scrim" aria-hidden="true" />
-
-      <div className="hero-inner">
-        <div className="max-w-[720px]">
-          <p className="eyebrow">
-            <span className="eyebrow-dot" aria-hidden="true" />
-            {profile.availability}
-          </p>
-
-          <h1>
-            <span className="h1-lead">{profile.heroLead}</span>{' '}
-            <span className="h1-name">{profile.name}</span>
-          </h1>
-
-          <div className="role-row">
-            <span className="role-line" aria-hidden="true" />
-            <p className="role">{profile.role}</p>
-          </div>
-
-          <div className="mt-7 flex flex-wrap gap-3.5">
-            <a
-              className="btn btn-primary"
-              href={RESUME_URL}
-              download="Madiha-Noor-Resume.pdf"
-              onClick={() => window.open(RESUME_URL, '_blank', 'noopener')}
-            >
-            <FontAwesomeIcon icon={faDownload}/>
-              <span>Download Resume</span>
-            </a>
-            <a className="btn btn-ghost" href={`mailto:${profile.email}`}>
-              <FontAwesomeIcon icon={faCircleArrowRight}/>
-              <span>Hire me</span>
-            </a>
-          </div>
-          </div>
-</div>
-
-      <button
-        type="button"
-        className="sound-btn"
-        onClick={toggleSound}
-        aria-label={muted ? 'Unmute the introduction video' : 'Mute the introduction video'}
-      >
-        {muted ? <SoundOff /> : <SoundOn />}
+        preload="auto"
+        aria-label="Portrait video"
+        onPlay={() => setPaused(false)}
+        onPause={() => setPaused(true)}
+      />
+      <button className="reel snd" aria-label={muted ? 'Turn sound on' : 'Turn sound off'} onClick={toggleSound}>
+        <b>{muted ? '🔇' : '🔊'}</b><small>{muted ? 'SOUND' : 'MUTE'}</small>
+      </button>
+      <button className="reel" aria-label={paused ? 'Play video' : 'Pause video'} onClick={togglePlay}>
+        <b>{paused ? '▶' : '❚❚'}</b><small>{paused ? 'PLAY REEL' : 'PAUSE'}</small>
       </button>
     </section>
   )
